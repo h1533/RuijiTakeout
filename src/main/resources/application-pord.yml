@@ -1,0 +1,55 @@
+spring:
+
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://huazll5510.mysql.rds.aliyuncs.com:3306/reggie?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: huauz
+      password: Huauz125510
+
+  # Redis缓存配置
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    # password:
+    database: 0
+    jedis:
+      # Redis 连接配置
+      pool:
+        max-active: 8 #最大连接数
+        max-wait: 1ms #连接池最大阻塞等待时间
+        max-idle: 4 #连接池最大空闲连接
+        min-idle: 0 #连接池最小空闲连接
+
+  ## 邮件配置
+  mail:
+    # 餐厅昵称
+    sendername: xxxx
+    # smtp.qq.com
+    host: smtp.qq.com
+    # 邮箱账号
+    username: 123456@qq.com
+    # 授权密码
+    password:
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
+aliyun:
+  sms:
+    # ID
+    access-key-id:
+    # Key
+    access-key-secret:
+    # 短信签名
+    sign-name:
+    # 短信模板
+    template-code:
+
+reggie:
+  # 本地文件上传地址
+  path:

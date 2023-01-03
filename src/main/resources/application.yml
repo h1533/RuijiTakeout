@@ -1,0 +1,60 @@
+server:
+  port: 8080
+
+aliyun:
+  sms:
+    # ID
+    access-key-id:
+    # Key
+    access-key-secret:
+    # 短信签名
+    sign-name:
+    # 短信模板
+    template-code:
+
+spring:
+  ## 邮件配置
+  mail:
+    # 餐厅昵称
+    sendername: xxxx
+    # smtp.qq.com
+    host: smtp.qq.com
+    # 邮箱账号
+    username: 123456@qq.com
+    # 授权密码
+    password:
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
+  profiles:
+    active: test
+
+  application:
+    name: reggie_takeout
+
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/reggie?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: root
+
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+
+mybatis-plus:
+  configuration:
+    #在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，按照驼峰命名法映射
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    #关闭Logo
+    banner: false
+    db-config:
+      id-type: ASSIGN_ID
